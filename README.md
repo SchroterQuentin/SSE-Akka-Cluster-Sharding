@@ -13,4 +13,4 @@ Then check the logs of api and run
 $ docker compose up test
 ```
 
-You should see number coming from the backend while generated on 3 differents containers. Awesome !
+You should see numbers coming from the backend while generated on 3 different containers. Awesome !
