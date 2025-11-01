@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Akka" Version="1.5.55" />
+    <PackageReference Include="Akka.Cluster.Sharding" Version="1.5.55" />
+    <PackageReference Include="Akka.Hosting" Version="1.5.55.1" />
+  </ItemGroup>
+
+</Project>

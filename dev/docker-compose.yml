@@ -1,0 +1,27 @@
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: dev/dockerfiles/dotnet.dockerfile
+      args:
+        PROJECT: src/XData.API
+    environment:
+      DOTNET_ENVIRONMENT: Development
+    deploy:
+      replicas: 3
+
+  lighthouse:
+    image: petabridge/lighthouse:latest
+    hostname: lighthouse
+    ports:
+      - '9110:9110'
+      - '4053:4053'
+    environment:
+      ACTORSYSTEM: "system"
+      CLUSTER_PORT: 4053
+      CLUSTER_IP: "lighthouse"
+    
+  test:
+    image: curlimages/curl:latest
+    command: ["curl", "-s", "http://api:8080/"]
+    tty: true
